@@ -57,6 +57,28 @@ public class RolController : BaseApiController
         return new Pager<RolDto>(listEntidad, entidad.totalRegistros, rolParams.PageIndex, rolParams.PageSize, rolParams.Search);
     }
 
+    /* [HttpGet("consulta-2/{Laboratorio}")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> MedicamentoLaboratorio(string Laboratorio)
+    {
+        var entidad = await unitofwork.Laboratorios.MedicamentoLaboratorio(Laboratorio);
+        var dto = mapper.Map<IEnumerable<object>>(entidad);
+        return Ok(dto);
+    }
+
+    [HttpGet("consulta-2/{Laboratorio}")]
+    [MapToApiVersion("1.1")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<object>>> MedicamentoLaboratorioPaginated(string Laboratorio, [FromQuery] Params laboratorioParams)
+    {
+        var entidad = await unitofwork.Laboratorios.MedicamentoLaboratorioPaginated(Laboratorio, laboratorioParams.PageIndex, laboratorioParams.PageSize, laboratorioParams.Search);
+        var listEntidad = mapper.Map<List<object>>(entidad.registros);
+        return new Pager<object>(listEntidad, entidad.totalRegistros, laboratorioParams.PageIndex, laboratorioParams.PageSize, laboratorioParams.Search);
+    }
+ */
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
