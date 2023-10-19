@@ -58,7 +58,7 @@ public class ApiContextSeed
 
             if (!context.Usuarios.Any())
             {
-                using (var reader = new StreamReader(ruta + @"/Data/Csvs/usuario.csv"))
+                using (var reader = new StreamReader(ruta + @"/Data/Csv/usuario.csv"))
                 {
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
@@ -71,7 +71,7 @@ public class ApiContextSeed
 
             if (!context.RolUsuarios.Any())
             {
-                using (var reader = new StreamReader(ruta + @"\Data\Csvs\rolUsuario.csv"))
+                using (var reader = new StreamReader(ruta + @"\Data\Csv\rolUsuario.csv"))
                 {
                     using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
                     {
