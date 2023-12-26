@@ -1,4 +1,4 @@
-# Proyecto de veterinaria
+# Skeleton
 
 Este proyecto proporciona una API que permite gestionar todo el apartado de la administración de una veterinaria.
 
