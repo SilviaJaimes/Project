@@ -13,6 +13,11 @@ public class ApiContext : DbContext
     public DbSet<RolUsuario> RolUsuarios { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
 
+    public DbSet<Like> Likes { get; set; }
+    public DbSet<Comment> Comments { get; set; }
+    public DbSet<Follower> Followers { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

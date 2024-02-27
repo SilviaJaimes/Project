@@ -5,24 +5,24 @@ using Persistencia;
 
 namespace Aplicacion.Repository;
 
-public class RolRepository : GenericRepository<Rol>, IRol
+public class LikeRepository : GenericRepository<Like>, ILike
 {
     private readonly ApiContext _context;
 
-    public RolRepository(ApiContext context) : base(context)
+    public LikeRepository(ApiContext context) : base(context)
     {
         _context = context;
     }
 
-    public override async Task<IEnumerable<Rol>> GetAllAsync()
+    public override async Task<IEnumerable<Like>> GetAllAsync()
     {
-        return await _context.Roles
+        return await _context.Likes
             .ToListAsync();
     }
 
-    public override async Task<Rol> GetByIdAsync(int id)
+    public override async Task<Like> GetByIdAsync(int id)
     {
-        return await _context.Roles
+        return await _context.Likes
         .FirstOrDefaultAsync(p =>  p.Id == id);
     }
 }
